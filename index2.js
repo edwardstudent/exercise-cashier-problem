@@ -1,6 +1,14 @@
 const moneyDollar = {
 	units: [
 		{
+			value: 500,
+			kind: 'note'
+		},
+		{
+			value: 200,
+			kind: 'note'
+		},
+		{
 			value: 100,
 			kind: 'note'
 		},
@@ -40,6 +48,14 @@ const moneyDollar = {
 }
 const moneyEuro = {
 	units: [
+		{
+			value: 500,
+			kind: 'note'
+		},
+		{
+			value: 200,
+			kind: 'note'
+		},
 		{
 			value: 100,
 			kind: 'note'
@@ -114,5 +130,5 @@ const getChange = (price, payAmount, money) => {
 	return ret;
 };
 
-const result = getChange(3.56, 20, moneyDollar);
+const result = getChange(3.56, 500, moneyEuro);
 console.log(result);
