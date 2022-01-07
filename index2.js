@@ -1,9 +1,44 @@
-// const money1 = {
-// 	notes: [100,50,20,10,5],
-// 	coins: [2,1,.5,.2,.1]
-// };
-
-const money = {
+const moneyDollar = {
+	units: [
+		{
+			value: 100,
+			kind: 'note'
+		},
+		{
+			value: 50,
+			kind: 'note'
+		},
+		{
+			value: 20,
+			kind: 'note'
+		},
+		{
+			value: 10,
+			kind: 'note'
+		},
+		{
+			value: 5,
+			kind: 'note'
+		},
+		{
+			value: .25,
+			kind: 'coin'
+		},
+		{
+			value: .1,
+			kind: 'coin'
+		},
+		{
+			value: .05,
+			kind: 'coin'
+		},
+		{
+			value: .01,
+			kind: 'coin'
+		}
+	]
+}
+const moneyEuro = {
 	units: [
 		{
 			value: 100,
@@ -60,7 +95,7 @@ const money = {
 	]
 }
 
-const getChange = (price, payAmount) => {
+const getChange = (price, payAmount, money) => {
 	const ret = {
 		returnMoney: []
 	};
@@ -79,5 +114,5 @@ const getChange = (price, payAmount) => {
 	return ret;
 };
 
-const result = getChange(3.56, 20);
+const result = getChange(3.56, 20, moneyDollar);
 console.log(result);
