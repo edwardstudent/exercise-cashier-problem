@@ -118,17 +118,22 @@ const getChange = (price, payAmount, money) => {
 	ret.payback = payAmount - price;
 	let tempPayback = ret.payback;
 
-	money.units.forEach(unit => {
-		if (unit.value <= tempPayback) {
-			while (unit.value <= tempPayback) {
-				ret.returnMoney.push(unit);
-				tempPayback -= unit.value;
+	if (ret.payback < 0) {
+		ret.error = true;
+	} else {
+		money.units.forEach(unit => {
+			if (unit.value <= tempPayback) {
+				while (unit.value <= tempPayback) {
+					ret.returnMoney.push(unit);
+					tempPayback -= unit.value;
+				}
 			}
-		}
-	});
+		});
+	}
 
 	return ret;
 };
 
-const result = getChange(3.56, 500, moneyEuro);
+const result = getChange(3.56, 1, moneyEuro);
+
 console.log(result);
