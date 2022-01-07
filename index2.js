@@ -61,11 +61,23 @@ const money = {
 }
 
 const getChange = (price, payAmount) => {
+	const ret = {
+		returnMoney: []
+	};
+	ret.payback = payAmount - price;
+	let tempPayback = ret.payback;
+
 	money.units.forEach(unit => {
-		console.log(unit);
+		if (unit.value <= tempPayback) {
+			while (unit.value <= tempPayback) {
+				ret.returnMoney.push(unit);
+				tempPayback -= unit.value;
+			}
+		}
 	});
 
-	return 'test';
+	return ret;
 };
 
 const result = getChange(3.56, 20);
+console.log(result);
