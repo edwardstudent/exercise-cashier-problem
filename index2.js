@@ -60,4 +60,7 @@ const money = {
 	]
 }
 
-console.log(money.notes);
+
+money.units.forEach(unit => {
+	console.log(unit);
+});
