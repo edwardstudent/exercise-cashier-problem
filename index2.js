@@ -50,7 +50,7 @@ const money = {
 			kind: 'coin'
 		},
 		{
-			value: 02,
+			value: .02,
 			kind: 'coin'
 		},
 		{
@@ -60,7 +60,12 @@ const money = {
 	]
 }
 
+const getChange = (price, payAmount) => {
+	money.units.forEach(unit => {
+		console.log(unit);
+	});
 
-money.units.forEach(unit => {
-	console.log(unit);
-});
+	return 'test';
+};
+
+const result = getChange(3.56, 20);
