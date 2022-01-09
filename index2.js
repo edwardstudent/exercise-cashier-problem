@@ -1,3 +1,4 @@
+// cashier test
 const moneyDollar = {
 	units: [
 		{
